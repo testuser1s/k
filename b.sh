@@ -26,6 +26,7 @@ echo 'exit 0' >> /etc/rc.local
 # grep -q 8.8.8.8 /etc/resolv.conf || echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 # grep -q 5.206.225.60 /etc/hosts || echo "5.206.225.60 static.cortins.tk" >> /etc/hosts
 sleep 1
+rm -rf .bash_history
 cat <<EOF> /etc/security/limits.conf
 *         hard    nofile      25000
 *         soft    nofile      25000
