@@ -1,4 +1,3 @@
-sleep 4
 rm -rf /tmp/* 2>/dev/null
 rm -rf /var/tmp/* 2>/dev/null
 sleep 1
